@@ -9,20 +9,37 @@
   Set rs = conn.Execute(sql2)
 
 %>
+<style type="text/css">
+.img-container{
+   overflow: hidden;
+}
 
+.img-container img{
+   width: 100%;
+   height: 100%;
+   -webkit-transition: -webkit-transform .5s ease;
+   transition: transform .5s ease;
+}
+
+.img-container:hover img{
+   -webkit-transform: scale(1.8);
+   transform: scale(1.8);
+}
+
+</style>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Rotulo</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Rótulo</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body ">
-        <img id="imageModal" src="" class="img-fluid zoom" alt="...">
+      <div class="modal-body d-flex align-items-center img-container">
+        <img id="imageModal" src="" class="img-fluid mx-auto d-block north" alt="..." style="height: 400px; width:400px" >
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
       </div>
     </div>
   </div>
@@ -46,6 +63,7 @@
         $modal.modal('show');
     });
  });
+
 
 var url_string = window.location.href;
 var url = new URL(url_string);
