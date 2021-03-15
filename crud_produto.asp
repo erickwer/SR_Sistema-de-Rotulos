@@ -3,8 +3,6 @@
 <!--#include file="upload.lib.asp"-->
 
 <% 
-session("idUsu")="11186178-1"
-
 Response.Charset = "ISO-8859-1"
 
 op = request("operacao") 

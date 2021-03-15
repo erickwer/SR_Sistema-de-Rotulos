@@ -2,7 +2,7 @@
 <!--#include file ="lib/conexao.asp"-->
 <!--#include file="base.asp"-->
 <%
-  sql = "SELECT P.Id as IdProduto, IdEmpresa, Descricao, EnderecoImagem, ConteudoLiquido, NomeFantasia, NumeroRegistro  FROM SR_Produto as P  INNER JOIN SR_Empresa as E ON P.IdEmpresa = E.Id WHERE P.Status=1"
+  sql = "SELECT P.Id as IdProduto, IdEmpresa, Descricao, EnderecoImagem, ConteudoLiquido, NomeFantasia, NumeroRegistro  FROM SR_Produto as P  INNER JOIN SR_Empresa as E ON P.IdEmpresa = E.Id WHERE P.Status=1 Order By P.Id"
   Set ObjRst = conn.Execute(sql)
 %>
 
@@ -163,6 +163,7 @@ function desativarProduto(prodId){
   <script>
     $(document).ready(function () {
        $('#dataTable').DataTable( {
+        "ordering": false,
         "language": {
             "lengthMenu": "Exibindo _MENU_ registros por página",
             "zeroRecords": "Nenhum dado encontrado",

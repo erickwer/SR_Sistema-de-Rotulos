@@ -1,7 +1,7 @@
 <%@LANGUAGE="VBSCRIPT" CODEPAGE="65001" %>
 <!--#include file="base.asp"-->
 <%
-    sql = "SELECT * FROM SR_Empresa WHERE Status=1"
+    sql = "SELECT * FROM SR_Empresa WHERE Status=1 Order By Id"
     Set rs = conn.Execute(sql)
 %>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
@@ -82,6 +82,7 @@
   <script>
     $(document).ready(function () {
        $('#dataTable').DataTable( {
+        "ordering": false,
         "language": {
             "lengthMenu": "Exibindo _MENU_ registros por página",
             "zeroRecords": "Nenhum dado encontrado",

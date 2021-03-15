@@ -2,7 +2,7 @@
 <!--#include file ="lib/conexao.asp"-->
 <!--#include file="base.asp"-->
 <%
-  sql = "SELECT * FROM SR_Produto WHERE IdEmpresa = "&request("id")&" AND Status=1"
+  sql = "SELECT * FROM SR_Produto WHERE IdEmpresa = "&request("id")&" AND Status=1 Order By Id"
   Set ObjRst = conn.Execute(sql)
 
   sql2 = "SELECT * FROM SR_Empresa WHERE Id="&request("id")&""
@@ -167,6 +167,7 @@ function desativarProduto(prodId){
   <script>
     $(document).ready(function () {
        $('#dataTable').DataTable( {
+         "ordering": false,
         "language": {
             "lengthMenu": "Exibindo _MENU_ registros por página",
             "zeroRecords": "Nenhum dado encontrado",
